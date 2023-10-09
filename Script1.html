@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <script>
+            function mycolor() {
+              document.getElementById("cl").innerHTML = "Red";
+            }
+            </script>
+
+    </head>
+<body>
+    <h1 class="text-center">1. Introduction</h1>
+
+    <p id="demo">JavaScript</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Python"'>Click Me!</button>
+
+<h6 id="abc">Heading too changes</h6>
+<button type="button" onclick='document.getElementById("abc").innerHTML = "Blue Head"'>Color</button>
+
+<p id="pq">India</p>
+<button  onclick='document.getElementById("pq").innerHTML="USA"'>Country Change!</button><br>
+
+<img id="img"  src="C:\Users\user\Desktop\Web\html\as3\angular\images\fb1.png" width="70" height="70">
+<button type="button" onclick="document.getElementById('img').src='C:\Users\user\Desktop\Web\html\as3\angular\images\tw.png'">Image Change</button>
+
+<p id="sty">Small to Big</p>
+<button type="button" onclick="document.getElementById('sty').style.fontSize='50px'">Size Change</button>
+
+<p id="hi">lets hide</p>
+<button type="button" onclick="document.getElementById('hi').style.display='none'">Hide</button>
+
+<p id="show" style="display:none">Elephant</p>
+<button type="button" onclick="document.getElementById('show').style.display='block'">Show It</button>
+
+<h1>2. Where To</h1>
+
+
+    <p id="ww"></p>
+    <script>
+        document.getElementById("ww").innerHTML="Start!";
+
+        
+    </script>
+    <p id="cl">Blue</p>
+    <button onclick="mycolor()" > Change</button>
+<p id="body">White</p>
+<script>
+    function color()
+    {document.getElementById("body").innerHTML="Black"; }
+    
+</script>
+
+<button onclick="color()">White to Black</button>
+
+<h1>3.Output</h1>
+
+<p id="doc"></p>
+<p id="do"></p>
+<p id="d"></p>
+
+<script>
+document.getElementById("doc").innerHTML= 11 - 20 ;
+document.getElementById("do").innerHTML=22 + "2" ;
+document.getElementById("d").innerHTML=22+2;
+document.write(5+54);
+window.alert(5+2);
+alert(15+11);
+console.log(4+12);
+
+
+</script>
+<br>
+<button type="button" onclick="document.write(18+9)">Click</button><br>
+<button type="button" onclick="window.print()">Print</button>
+
+<h1>4. Statements</h1>
+<p id="add"></p>
+<p id="ad"></p>
+<script>
+    let a, b, c;
+a = 12;
+b = 13;
+c = a + b;
+document.getElementById("add").innerHTML = c;
+let x, y, z;
+x= 25; y = 62; z = x + y;
+document.getElementById("ad").innerHTML = z;
+
+function statements() {
+  document.getElementById("st1").innerHTML = "hey";
+  document.getElementById("st2").innerHTML = "okay?";
+}
+</script>
+<p id="st1"></p>
+<p id="st2"></p>
+<button onclick="statements()">SHOW BOTH</button>
+
+<h1>5. Syntax&Comments</h1>
+<p id="ca"></p>
+<p id="sta"></p>
+<p id="plus"></p>
+<script>
+let p;
+p= 22;
+document.getElementById("sta").innerHTML = p;
+document.getElementById("ca").innerHTML = (5 + 6) * 10 / 2; // it works//
+document.getElementById("plus").innerHTML = "India" + " "  + "Country"; /* it also works */
+</script>
+
+<h1>7. Variables, Let, Const</h1>
+<p id="va"></p>
+<p id="le"></p>
+<p id="con"></p>
+<p id="both"></p>
+
+<script>
+var l = 5;
+var m = 6;
+var n = l + m;
+document.getElementById("va").innerHTML =
+"value: " + n;
+
+let o = 5;
+let r = 6;
+let q = o + r;
+document.getElementById("le").innerHTML =
+"value: " + q;
+
+const price1 = 15;
+const price2 = 63;
+let total = price1 + price2;
+document.getElementById("con").innerHTML="total:" + total;
+
+let $$$ = 5;
+let $myMoney = 8;
+document.getElementById("both").innerHTML = $$$ + $myMoney;
+</script>
+
+</body>
+</html>
+
