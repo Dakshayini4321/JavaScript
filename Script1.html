@@ -136,6 +136,270 @@ let $myMoney = 8;
 document.getElementById("both").innerHTML = $$$ + $myMoney;
 </script>
 
+<h1>8. Arithametic</h1>
+
+<p id="a1"></p>
+<p id="a2"></p>
+<p id="a3"></p>
+<p id="a4"></p>
+<p id="a5"></p>
+<p id="a6"></p>
+<p id="a7"></p>
+<p id="a8"></p>
+<p id="a9"></p>
+<p id="a10"></p>
+<p id="a11"></p>
+
+<script>
+let l1 = 100 + 50;
+document.getElementById("a1").innerHTML = l1 ;
+let l2 = 120;
+let l3 = 50;
+let l4 = l2 + l3;
+document.getElementById("a2").innerHTML = l4 ;
+document.getElementById("a4").innerHTML = l2 - l3 ;
+document.getElementById("a5").innerHTML = l2 * l3 ;
+document.getElementById("a6").innerHTML = l2 / l3 ;
+document.getElementById("a7").innerHTML = l2 % l3 ;
+document.getElementById("a8").innerHTML = l2 ++ ;
+document.getElementById("a9").innerHTML = l2 -- ;
+document.getElementById("a10").innerHTML = l2 ** 3 ;
+document.getElementById("a11").innerHTML = Math.pow(l2,4) ;
+
+
+
+
+
+
+
+let l5 = 3;
+let l6 = (100 + 50) * l5;
+document.getElementById("a3").innerHTML = l6 ;
+
+
+
+</script>
+
+
+<h1>9. Data Types</h1>
+
+<p id="b1"></p>
+
+<script>
+let m1 = "Apple" + 22 + 6;
+document.getElementById("b1").innerHTML = m1 ;
+
+let numberVar = 42; 
+let stringVar = "Hello, World!"; 
+let booleanVar = true; 
+let arrayVar = [1, 2, 3, 4, 5]; 
+let objectVar = { name: "John", age: 30 };
+let nullVar = null; 
+let undefinedVar; 
+
+
+console.log("Number:", numberVar, typeof numberVar);
+console.log("String:", stringVar, typeof stringVar);
+console.log("Boolean:", booleanVar, typeof booleanVar);
+console.log("Array:", arrayVar, typeof arrayVar);
+console.log("Object:", objectVar, typeof objectVar);
+console.log("Null:", nullVar, typeof nullVar);
+console.log("Undefined:", undefinedVar, typeof undefinedVar);
+
+
+
+</script>
+<h1>10. Functions</h1>
+
+<p id="c1"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+
+let result = myFunction(34, 68);
+document.getElementById("c1").innerHTML = result; // function call means function invocation//
+
+
+function addNumbers(a, b) {
+  return a + b;
+}
+
+function greetUser(name) {
+  return "Hello, " + name + "!";
+}
+
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+
+function findMax(a, b, c) {
+  return Math.max(a, b, c);
+}
+
+
+console.log("Sum of 5 and 7:", addNumbers(5, 7));
+console.log(greetUser("Alice"));
+console.log("Is 10 even?", isEven(10));
+console.log("The maximum of 3, 8, and 1 is:", findMax(3, 8, 1));
+
+
+
+
+
+</script> 
+
+<h1>11. Objects</h1>
+
+<script>
+    let person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  city: "New York",
+  isStudent: true,
+
+  
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+
+  
+  checkStudentStatus: function () {
+    if (this.isStudent) {
+      return "Is a student.";
+    } else {
+      return "Is not a student.";
+    }
+  },
+};
+
+
+console.log("First Name:", person.firstName);
+console.log("Last Name:", person.lastName);
+console.log("Age:", person.age);
+console.log("City:", person.city);
+
+
+console.log("Full Name:", person.fullName());
+console.log("Student Status:", person.checkStudentStatus());
+</script>
+
+<h1>12. Events</h1>
+<button onclick="displayDate()">Time</button>
+
+<script>
+function displayDate() {
+  document.getElementById("dq2").innerHTML = Date();
+} 
+</script>
+
+<p id="dq2"></p> 
+
+<h1>13. Strings/ methods, search, template </h1>
+
+<script>
+    let sampleString = "   Hello, World!   ";
+
+console.log("String Length:", sampleString.length);
+
+
+let slicedString = sampleString.slice(4, 9);
+console.log("String Slice:", slicedString);
+
+
+let substring = sampleString.substring(4, 9);
+console.log("String Substring:", substring);
+
+
+let substr = sampleString.substr(4, 5);
+console.log("String Substr:", substr);
+
+
+let replacedString = sampleString.replace("World", "Universe");
+console.log("String Replace:", replacedString);
+
+if (String.prototype.replaceAll) {
+  let replacedAllString = sampleString.replaceAll(" ", "_");
+  console.log("String ReplaceAll:", replacedAllString);
+}
+
+let upperCaseString = sampleString.toUpperCase();
+console.log("String toUpperCase:", upperCaseString);
+
+
+let lowerCaseString = sampleString.toLowerCase();
+console.log("String toLowerCase:", lowerCaseString);
+
+
+let concatenatedString = sampleString.concat(" Welcome!");
+console.log("String Concat:", concatenatedString);
+
+
+let trimmedString = sampleString.trim();
+console.log("String Trim:", trimmedString);
+
+
+let trimStartString = sampleString.trimStart();
+console.log("String TrimStart:", trimStartString);
+
+let trimEndString = sampleString.trimEnd();
+console.log("String TrimEnd:", trimEndString);
+
+let paddedString = sampleString.padStart(20, "*");
+console.log("String PadStart:", paddedString);
+
+let paddedEndString = sampleString.padEnd(20, "*");
+console.log("String PadEnd:", paddedEndString);
+
+let charAtIndex = sampleString.charAt(4);
+console.log("String CharAt:", charAtIndex);
+
+
+let charCodeAtIndex = sampleString.charCodeAt(4);
+console.log("String CharCodeAt:", charCodeAtIndex);
+
+
+let splitString = sampleString.split(",");
+console.log("String Split:", splitString);
+
+
+console.log("String IndexOf 'World':", sampleString.indexOf("World"));
+
+
+console.log("String LastIndexOf 'l':", sampleString.lastIndexOf("l"));
+
+console.log("String Search 'Hello':", sampleString.search("Hello"));
+
+console.log("String Match 'World':", sampleString.match("World"));
+
+let matchAll = sampleString.matchAll(/\w+/g);
+for (const match of matchAll) {
+  console.log("String MatchAll:", match[0]);
+}
+
+console.log("String Includes 'Hello':", sampleString.includes("Hello"));
+
+console.log("String StartsWith '   ':", sampleString.startsWith("   "));
+
+console.log("String EndsWith '!   ':", sampleString.endsWith("!   "));
+
+let name = "Arun";
+let age = 30;
+
+
+let greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+console.log(greeting);
+
+
+
+</script>
+
+
+
 </body>
 </html>
 
