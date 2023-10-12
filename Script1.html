@@ -27,7 +27,7 @@
 <button type="button" onclick="document.getElementById('sty').style.fontSize='50px'">Size Change</button>
 
 <p id="hi">lets hide</p>
-<button type="button" onclick="document.getElementById('hi').style.display='none'">Hide</button>
+<button type="button" onclick="document.getElementById('hi').style.display                                                    ='none'">Hide</button>
 
 <p id="show" style="display:none">Elephant</p>
 <button type="button" onclick="document.getElementById('show').style.display='block'">Show It</button>
@@ -465,6 +465,129 @@ console.log("Updated Array after Splice:", fruits);
 let slicedFruits = fruits.slice(1, 3);
 console.log("Sliced Fruits:", slicedFruits);
 </script>
+
+<h1>16. Array Methods, Iteration, Sort and Const</h1>
+
+
+<script>
+  const numbers = [5, 2, 9, 1, 5, 6, 3, 8, 4, 7];
+
+
+numbers.push(10); 
+numbers.unshift(0); 
+
+
+numbers.pop(); 
+numbers.shift();
+
+
+console.log("Array Iteration using forEach:");
+numbers.forEach((number, index) => {
+  console.log(`Element at index ${index}: ${number}`);
+});
+
+const daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+console.log("Original Array:", numbers);
+
+numbers.sort((a, b) => a - b);
+console.log("Sorted Array (Ascending):", numbers);
+
+numbers.sort((a, b) => b - a);
+console.log("Sorted Array (Descending):", numbers);
+
+console.log("Original Days Array:", daysOfTheWeek);
+
+daysOfTheWeek.sort();
+console.log("Sorted Days Array (Alphabetical):", daysOfTheWeek);
+
+daysOfTheWeek.sort((a, b) => b.localeCompare(a));
+console.log("Sorted Days Array (Reverse Alphabetical):", daysOfTheWeek);
+</script>
+<h1>17. Dates, Formats, Get and Set Methods</h1>
+
+<script>
+  let currentDate = new Date();
+
+console.log("Current Date and Time (Default Format):", currentDate);
+
+let year = currentDate.getFullYear();
+let month = currentDate.getMonth(); 
+let day = currentDate.getDate();
+let hours = currentDate.getHours();
+let minutes = currentDate.getMinutes();
+let seconds = currentDate.getSeconds();
+
+console.log("Year:", year);
+console.log("Month:", month + 1); 
+console.log("Day:", day);
+console.log("Hours:", hours);
+console.log("Minutes:", minutes);
+console.log("Seconds:", seconds);
+
+
+currentDate.setFullYear(2023);
+currentDate.setMonth(11); 
+currentDate.setDate(25);
+currentDate.setHours(15);
+currentDate.setMinutes(30);
+currentDate.setSeconds(0);
+
+console.log("Updated Date and Time:", currentDate);
+
+let formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
+let formattedTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+
+console.log("Custom Formatted Date:", formattedDate);
+console.log("Custom Formatted Time:", formattedTime);
+</script>
+
+<h1>18. Math, Random, Booleans and comparison</h1>
+<script>
+  let randomNum = Math.floor(Math.random() * 10) + 1;
+console.log("Random Number between 1 and 10:", randomNum);
+
+let num1 = 7;
+let num2 = 3;
+
+let addition = num1 + num2;
+let subtraction = num1 - num2;
+let multiplication = num1 * num2;
+let division = num1 / num2;
+let remainder = num1 % num2;
+let power = Math.pow(num1, num2);
+let squareRoot = Math.sqrt(num1);
+
+console.log("Addition:", addition);
+console.log("Subtraction:", subtraction);
+console.log("Multiplication:", multiplication);
+console.log("Division:", division);
+console.log("Remainder:", remainder);
+console.log("Power:", power);
+console.log("Square Root:", squareRoot);
+
+
+let isGreater = num1 > num2;
+let isEqual = num1 === num2;
+let isNotEqual = num1 !== num2;
+
+console.log("Is num1 greater than num2?", isGreater);
+console.log("Is num1 equal to num2?", isEqual);
+console.log("Is num1 not equal to num2?", isNotEqual);
+
+
+let isTrue = true;
+let isFalse = false;
+
+let logicalAnd = isTrue && isFalse;
+let logicalOr = isTrue || isFalse;
+let logicalNot = !isTrue;
+
+console.log("Logical AND:", logicalAnd);
+console.log("Logical OR:", logicalOr);
+console.log("Logical NOT:", logicalNot);
+</script>
+
 </body>
 </html>
 
