@@ -588,6 +588,73 @@ console.log("Logical OR:", logicalOr);
 console.log("Logical NOT:", logicalNot);
 </script>
 
+<h1>19. If else and Switch</h1>
+<script>
+  const number = parseInt(prompt("Enter a number:"));
+
+if (number % 2 === 0) {
+  console.log(`${number} is even.`);
+} else {
+  console.log(`${number} is odd.`);
+}
+
+switch (number % 2) {
+  case 0:
+    console.log(`${number} is even.`);
+    break;
+  case 1:
+    console.log(`${number} is odd.`);
+    break;
+  default:
+    console.log("Invalid input.");
+}
+const dayNumber = parseInt(prompt("Enter a number (1-7) for the day of the week:"));
+
+if (dayNumber === 1) {
+  console.log("It's Sunday");
+} else if (dayNumber === 2) {
+  console.log("It's Monday");
+} else if (dayNumber === 3) {
+  console.log("It's Tuesday");
+} else if (dayNumber === 4) {
+  console.log("It's Wednesday");
+} else if (dayNumber === 5) {
+  console.log("It's Thursday");
+} else if (dayNumber === 6) {
+  console.log("It's Friday");
+} else if (dayNumber === 7) {
+  console.log("It's Saturday");
+} else {
+  console.log("Invalid input. Please enter a number from 1 to 7.");
+}
+
+switch (dayNumber) {
+  case 1:
+    console.log("It's Sunday");
+    break;
+  case 2:
+    console.log("It's Monday");
+    break;
+  case 3:
+    console.log("It's Tuesday");
+    break;
+  case 4:
+    console.log("It's Wednesday");
+    break;
+  case 5:
+    console.log("It's Thursday");
+    break;
+  case 6:
+    console.log("It's Friday");
+    break;
+  case 7:
+    console.log("It's Saturday");
+    break;
+  default:
+    console.log("Invalid input. Please enter a number from 1 to 7.");
+}
+</script>
+
 </body>
 </html>
 
