@@ -655,6 +655,98 @@ switch (dayNumber) {
 }
 </script>
 
+<h1>JS LOOP FOR, FOR IN, FOR OF and While</h1>
+<script>
+  let numb = [1, 2, 3, 4, 5];
+let frui = ["apple", "banana", "cherry"];
+let colors = ["red", "green", "blue", "yellow", "orange"];
+
+
+console.log("");
+for (let i = 0; i < numb.length; i++) {
+  console.log(numb[i]);
+}
+
+console.log("\n");
+for (let i = 0; i < frui.length; i++) {
+  console.log(frui[i]);
+}
+
+
+console.log("\n");
+for (let i = 0; i < colors.length; i++) {
+  console.log(colors[i]);
+}
+
+
+console.log("\n");
+for (let index in numb) {
+  console.log(numb[index]);
+}
+
+console.log("\n");
+for (let index in frui) {
+  console.log(fruits[index]);
+}
+
+
+console.log("\n");
+for (let index in colors) {
+  console.log(colors[index]);
+}
+
+console.log("\n");
+for (let number of numb) {
+  console.log(number);
+}
+
+
+console.log("\n");
+for (let fruit of frui) {
+  console.log(fruit);
+}
+
+
+console.log("\n");
+for (let color of colors) {
+  console.log(color);
+}
+
+
+console.log("\n");
+let i = 0;
+while (i < numb.length) {
+  console.log(numb[i]);
+  if (i === 2) {
+    console.log(" at i = 2");
+    break;
+  }
+  i++;
+}
+
+console.log("\nE");
+i = 0;
+while (i < frui.length) {
+  console.log(frui[i]);
+  if (i === 1) {
+    console.log("at i = 1");
+    break;
+  }
+  i++;
+}
+
+
+console.log("\n");
+i = 0;
+while (i < colors.length) {
+  console.log(colors[i]);
+  if (i === 3) {
+    console.log(" at i = 3");
+    break;
+  }
+  i++;
+}
+</script>
 </body>
 </html>
 
