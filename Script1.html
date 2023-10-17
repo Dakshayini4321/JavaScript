@@ -747,6 +747,129 @@ while (i < colors.length) {
   i++;
 }
 </script>
+<h1>Iterables</h1>
+<script>
+  const uniqueLettersInWord = new Set("incomprehensible");
+console.log("Unique Letters in 'incomprehensible':", uniqueLettersInWord);
+
+
+const uniqueEvenNumbers = new Set([2, 4, 6, 8, 10]);
+console.log("Unique Even Numbers:", uniqueEvenNumbers);
+
+const uniqueLanguages = new Set(["JavaScript", "Python", "Java", "C++"]);
+console.log("Unique Programming Languages:", uniqueLanguages);
+
+
+const uniqueUserIds = new Set([101, 205, 309, 412, 517]);
+console.log("Unique User IDs:", uniqueUserIds);
+
+const countriesAndPopulations = new Map([
+  ["China", 1444216107],
+  ["India", 1380004385],
+  ["United States", 331002651]
+]);
+console.log("Countries and Populations:", countriesAndPopulations);
+
+const bookTitlesAndAuthors = new Map([
+  ["To Kill a Mockingbird", "Harper Lee"],
+  ["1984", "George Orwell"],
+  ["The Great Gatsby", "F. Scott Fitzgerald"]
+]);
+console.log("Book Titles and Authors:", bookTitlesAndAuthors);
+
+
+const productPricesAndDescriptions = new Map([
+  [29.99, "Smartphone case"],
+  [99.95, "Wireless headphones"],
+  [49.99, "Coffee maker"]
+]);
+console.log("Product Prices and Descriptions:", productPricesAndDescriptions);
+
+const cityLocationsAndCoordinates = new Map([
+  ["New York", { latitude: 40.7128, longitude: -74.0060 }],
+  ["Paris", { latitude: 48.8566, longitude: 2.3522 }],
+  ["Tokyo", { latitude: 35.682839, longitude: 139.759455 }]
+]);
+console.log("City Locations and Coordinates:", cityLocationsAndCoordinates);
+
+
+console.log("Iterables:");
+
+
+const fru = ["apple", "banana", "cherry"];
+for (const fruit of fru) {
+  console.log(fruit);
+}
+
+const sentence = "Hello, World!";
+for (const char of sentence) {
+  console.log(char);
+}
+
+const col = ["red", "green", "blue"];
+for (const entry of col.entries()) {
+  console.log(entry);
+}
+
+const people = new Map();
+people.set("Alice", 30);
+people.set("Bob", 25);
+people.set("Eve", 28);
+for (const key of people.keys()) {
+  console.log(key);
+}
+
+console.log("\nSets:");
+
+const uniqueNumbers = new Set([1, 2, 3, 4, 4, 5]);
+console.log("Unique Numbers:", uniqueNumbers);
+
+uniqueNumbers.add(6);
+uniqueNumbers.delete(3);
+console.log("Updated Unique Numbers:", uniqueNumbers);
+
+const hasFive = uniqueNumbers.has(5);
+console.log("Does it contain 5?", hasFive);
+
+for (const number of uniqueNumbers) {
+  console.log(number);
+}
+
+
+console.log("\nMap:");
+
+const countriesAndCapitals = new Map();
+countriesAndCapitals.set("USA", "Washington, D.C.");
+countriesAndCapitals.set("France", "Paris");
+console.log("Countries and Capitals:", countriesAndCapitals);
+
+countriesAndCapitals.set("Japan", "Tokyo");
+const capitalOfUSA = countriesAndCapitals.get("USA");
+console.log("Capital of USA:", capitalOfUSA);
+
+const hasFrance = countriesAndCapitals.has("France");
+console.log("Does it contain France?", hasFrance);
+
+for (const [country, capital] of countriesAndCapitals) {
+  console.log(`The capital of ${country} is ${capital}`);
+}
+
+console.log("\ntypeof Examples:");
+
+const num = 42;
+console.log("Type of num:", typeof num);
+
+
+const nam = "Raj";
+console.log("Type of name:", typeof nam);
+
+
+const isTr = true;
+console.log("Type of isTrue:", typeof isTr);
+
+const perso = { name: "Bob", age: 25 };
+console.log("Type of person:", typeof perso);
+</script>
 </body>
 </html>
 
