@@ -870,6 +870,46 @@ console.log("Type of isTrue:", typeof isTr);
 const perso = { name: "Bob", age: 25 };
 console.log("Type of person:", typeof perso);
 </script>
+<h1>Type of conversion and Bitwise</h1>
+<script>
+  const stringNumber = "42";
+const convertedNumber = Number(stringNumber);
+console.log(`Converted ${stringNumber} to a number: ${convertedNumber}`);
+
+const number0 = 123;
+const convertedString = String(number0);
+console.log(`Converted ${number0} to a string: "${convertedString}"`);
+
+const booleanValue = true;
+const convertedBoolToNum = Number(booleanValue);
+console.log(`Converted ${booleanValue} to a number: ${convertedBoolToNum}`);
+
+const anotherNumber1 = 0;
+const convertedNumToBool = Boolean(anotherNumber1);
+console.log(`Converted ${anotherNumber1} to a boolean: ${convertedNumToBool}`);
+
+
+const num11 = 5;   //101
+const num22 = 3;   //  011
+const resultAnd = num1 & num2;  
+console.log(`Bitwise AND of ${num11} & ${num22}: ${resultAnd}`);
+
+const num3 = 5;   // 101
+const num4 = 3;   // 011
+const resultOr = num3 | num4;  
+console.log(`Bitwise OR of ${num3} | ${num4}: ${resultOr}`);
+
+
+const num5 = 5;   // 101
+const resultNot = ~num5;  
+console.log(`Bitwise NOT of ~${num5}: ${resultNot}`);
+
+
+const num6 = 5;   // 101
+const num7 = 3;   // 011
+const resultXor = num6 ^ num7;  
+console.log(`Bitwise XOR of ${num6} ^ ${num7}: ${resultXor}`);
+</script>
 </body>
 </html>
 
