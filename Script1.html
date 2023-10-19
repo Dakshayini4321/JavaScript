@@ -910,6 +910,42 @@ const num7 = 3;   // 011
 const resultXor = num6 ^ num7;  
 console.log(`Bitwise XOR of ${num6} ^ ${num7}: ${resultXor}`);
 </script>
+<h1>RegExp,Procedence and Errors</h1>
+<script>
+  const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const text = "I like apples and apples are tasty.";
+const replacedText = text.replace(/apple/g, "orange");
+const sentence2 = "Hello, World! This is a test.";
+const words = sentence2.split(/[\s,!.]+/);
+const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+const hasUppercase = /[A-Z]/.test("Hello World");
+
+
+const result1 = 5 + 3 * 2; 
+const True = true;
+const False = false;
+const result2 = isTrue || False && True; 
+const result3 = (5 + 3) * 2; 
+const x6 = 10;
+const y6 = 5;
+if (x6 > 5 || y6 < 8 && x6 + y6 === 15) {
+    
+}
+const result4 = x > y ? "x is greater" : "y is greater";
+const result5 = 5 * 2 + 3 > 10 && true || false; 
+
+const value = undefinedVar;
+function sum(a, b { 
+    return a + b;
+}
+const result6 = add(5, 3); 
+const result7 = 10 / 0; 
+if (x > 5 {
+    
+}
+const invalidPattern = /.*+$/; 
+</script>
 </body>
 </html>
 
