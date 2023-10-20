@@ -917,7 +917,7 @@ const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const text = "I like apples and apples are tasty.";
 const replacedText = text.replace(/apple/g, "orange");
 const sentence2 = "Hello, World! This is a test.";
-const words = sentence2.split(/[\s,!.]+/);
+const words = sentence.split(/[\s,!.]+/);
 const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
 const hasUppercase = /[A-Z]/.test("Hello World");
 
@@ -936,16 +936,126 @@ const result4 = x > y ? "x is greater" : "y is greater";
 const result5 = 5 * 2 + 3 > 10 && true || false; 
 
 const value = undefinedVar;
-function sum(a, b { 
+function sum(a, b) { 
     return a + b;
 }
 const result6 = add(5, 3); 
 const result7 = 10 / 0; 
-if (x > 5 {
+if (x > 5) {
     
 }
 const invalidPattern = /.*+$/; 
 </script>
+<h1>Scope,Hoisting, Strict and This </h1>
+<script>
+  console.log("Scope Examples:");
+
+
+let globalVar = "I'm a global variable";
+
+function testScope() {
+    console.log(globalVar);
+}
+testScope();
+console.log(globalVar);
+
+
+function testLocalScope() {
+    let localVar = "I'm a local variable";
+    console.log(localVar);
+}
+testLocalScope();
+
+
+function functionScopeExample() {
+    if (true) {
+        var functionScopedVar = "I'm a function-scoped variable";
+    }
+    console.log(functionScopedVar);
+}
+functionScopeExample();
+console.log(functionScopedVar);  
+
+
+function blockScopeExample() {
+    if (true) {
+        let blockScopedVar = "I'm a block-scoped variable";
+        const constantVar = "I'm a constant block-scoped variable";
+        console.log(blockScopedVar);
+        console.log(constantVar);
+    }
+   
+}
+blockScopeExample();
+
+
+console.log("\nHoisting :");
+
+
+console.log(hoistedVar); 
+var hoistedVar = "I'm a hoisted variable";
+
+hoistedFunction();
+
+function hoistedFunction() {
+    console.log("I'm a hoisted function");
+}
+
+
+console.log(x1);  
+let x1 = "I'm a let variable";
+
+
+console.log("\nStrict Mode Example:");
+
+"use strict";
+strictVar = "I'm a strict variable";  
+
+console.log("\n'this' Keyword :");
+
+
+console.log(this === window);  
+
+
+const person1 = {
+    name: "John",
+    sayName: function() {
+        console.log(this.name);
+    }
+};
+person1.sayName();
+
+
+const button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+    console.log(this);  
+});
+
+
+function Car(make) {
+    this.make = make;
+}
+
+const myCar = new Car("Toyota");
+console.log(myCar.make);
+
+
+const arrowFunctionExample = () => {
+    console.log(this); 
+};
+
+const regularFunctionExample = function() {
+    console.log(this); 
+};
+
+const obj = {
+    arrowFunctionExample,
+    regularFunctionExample
+};
+
+obj.arrowFunctionExample();
+obj.regularFunctionExample();
+  </script>
 </body>
 </html>
 
