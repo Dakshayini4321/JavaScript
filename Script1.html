@@ -939,12 +939,12 @@ const value = undefinedVar;
 function sum(a, b) { 
     return a + b;
 }
-const result6 = add(5, 3); 
+const result6 = sum(5, 3); 
 const result7 = 10 / 0; 
 if (x > 5) {
     
 }
-const invalidPattern = /.*+$/; 
+
 </script>
 <h1>Scope,Hoisting, Strict and This </h1>
 <script>
@@ -973,8 +973,7 @@ function functionScopeExample() {
     }
     console.log(functionScopedVar);
 }
-functionScopeExample();
-console.log(functionScopedVar);  
+
 
 
 function blockScopeExample() {
@@ -1001,9 +1000,9 @@ function hoistedFunction() {
     console.log("I'm a hoisted function");
 }
 
-
-console.log(x1);  
 let x1 = "I'm a let variable";
+console.log(x1);  
+
 
 
 console.log("\nStrict Mode Example:");
@@ -1026,10 +1025,6 @@ const person1 = {
 person1.sayName();
 
 
-const button = document.getElementById("myButton");
-button.addEventListener("click", function() {
-    console.log(this);  
-});
 
 
 function Car(make) {
@@ -1055,6 +1050,176 @@ const obj = {
 
 obj.arrowFunctionExample();
 obj.regularFunctionExample();
+  </script>
+  <h1>Arrow,Classes, JSON, Debugging,Style</h1>
+  <script>
+    const add = (a, b) => a + b;
+console.log(add(2, 3)); 
+
+const square = x => x * x;
+console.log(square(4)); 
+
+const numbers7 = [1, 2, 3, 4, 5];
+const squaredNumbers = numbers7.map(x => x * x);
+console.log(squaredNumbers); 
+
+setTimeout(() => {
+  console.log("Hello, after 2 seconds!");
+}, 2000);
+
+const person9 = {
+  name: "Alice",
+  greet: () => {
+    console.log(`Hello, I'm ${this.name}`);
+  }
+};
+person9.greet(); 
+
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+  calculateArea() {
+    return this.width * this.height;
+  }
+}
+const rect = new Rectangle(5, 10);
+console.log(rect.calculateArea()); 
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const myDog = new Dog("Buddy");
+myDog.speak(); 
+
+class Circle {
+  constructor(radius) {
+    this._radius = radius;
+  }
+  get diameter() {
+    return this._radius * 2;
+  }
+  set diameter(d) {
+    this._radius = d / 2;
+  }
+}
+
+const myCircle = new Circle(5);
+console.log(myCircle.diameter); 
+myCircle.diameter = 8;
+console.log(myCircle._radius);
+
+class MathUtils {
+  static add(x, y) {
+    return x + y;
+  }
+}
+
+console.log(MathUtils.add(3, 7)); 
+
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+  static category = "Fiction";
+}
+
+const myBook = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+console.log(myBook.title); 
+console.log(Book.category); 
+
+
+ 
+
+
+
+const jsonString = '{"name": "John", "age": 30}';
+const john = JSON.parse(jsonString);
+console.log(john.name); 
+
+const person8 = { name: "Alice", age: 25 };
+const person8JSON = JSON.stringify(person);
+console.log(person8JSON);
+
+
+function divide(a, b) {
+  if (b === 0) {
+    console.error("Division by zero!");
+    return null;
+  }
+  return a / b;
+}
+
+const result45 = divide(10, 2);
+console.log(result45);
+const result46 = divide(8, 0); 
+console.log(result46); 
+
+const firstName = "Alice";
+const ageInYears = 30;
+
+function greet(name) {
+  if (name) {
+    console.log(`Hello, ${name}!`);
+  } else {
+    console.log("Hello, stranger!");
+  }
+}
+
+
+function calculateSquare(number) {
+  return number * number;
+}
+
+const products = [
+  { name: "Laptop", price: 800 },
+  { name: "Phone", price: 400 },
+  { name: "Tablet", price: 200 }
+];
+
+const productsJSON = JSON.stringify(products);
+console.log(productsJSON);
+
+
+function subtract(x, y) {
+  return x - y;
+}
+
+const result47 = subtract(10, 5);
+console.log(result47); 
+const result48 = subtract("abc", 2); 
+
+const lastName = "Smith";
+const userAge = 40;
+
+
+function farewell(name) {
+  if (name) {
+    console.log(`Goodbye, ${name}!`);
+  } else {
+    console.log("Farewell, stranger!");
+  }
+}
+
+
+function findMaxValue(arr) {
+  return Math.max(...arr);
+}
   </script>
 </body>
 </html>
