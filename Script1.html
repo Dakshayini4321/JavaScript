@@ -1224,6 +1224,255 @@ function findMaxValue(arr) {
   <h1>Js Module</h1>
   <p id="output"></p>
     <script type="module" src="C:\Users\user\Desktop\Web\html\as3\angular\JavaScript\js\main.js"></script>
+    <h1>Js Objects</h1>
+    <script>
+      const person88 = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+};
+
+
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+const myCar0 = new Car('Toyota', 'Camry');
+
+const student = Object.create(null);
+student.name = 'Alice';
+student.age = 25;
+
+class Dog {
+  constructor(name, breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+}
+const myDog0 = new Dog('Fido', 'Labrador');
+
+
+const company = {
+  name: 'TechCorp',
+  address: {
+    street: '123 Main St',
+    city: 'Techville',
+  },
+};
+
+const person99 = { name: 'Alice', age: 28 };
+console.log(person99.name); 
+
+
+person99.age = 29; 
+person99.job = 'Engineer';
+
+
+delete person99.age; 
+
+
+const hasJob = 'job' in person99; 
+
+const calculator = {
+  add: function (a, b) {
+    return a + b;
+  },
+};
+
+
+const sum = calculator.add(5, 3);
+
+const person98 = {
+  name: 'Alice',
+  greet: function () {
+    return `Hello, ${this.name}!`;
+  },
+};
+
+
+const vehicle = {
+  type: 'Car',
+  start: () => {
+    return 'Engine started.';
+  },
+};
+
+
+const result99 = person98.greet();
+
+console.log(person98);
+
+
+const keys = Object.keys(person);
+const values = Object.values(person);
+
+
+const personJSON = JSON.stringify(person);
+
+
+for (const key in person) {
+  console.log(key + ': ' + person[key]);
+}
+
+
+person.toString = function () {
+  return `Name: ${this.name}, Age: ${this.age}`;
+};
+
+const person = {
+  _name: 'Alice',
+  get name() {
+    return this._name;
+  },
+  set name(newName) {
+    this._name = newName;
+  }
+};
+
+
+const prop = 'age';
+const user = { [prop]: 25 };
+
+
+const car = {};
+Object.defineProperty(car, 'make', {
+  value: 'Toyota',
+  writable: false
+});
+
+
+const key = 'color';
+const bike = {
+  [key]: 'red',
+  get [key]() {
+    return this[key];
+  }
+};
+
+
+const make = 'Honda';
+const model = 'Civic';
+const vehicle9 = {
+  make,
+  model,
+  get details() {
+    return `${this.make} ${this.model}`;
+  }
+};
+
+function Person(name) {
+  this.name = name;
+}
+
+
+const john9 = new Person('John');
+
+
+Person.prototype.greet = function() {
+  return `Hello, ${this.name}!`;
+};
+
+
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
+}
+const novel = new Book('To Kill a Mockingbird', 'Harper Lee');
+
+
+Book.prototype.displayInfo = function() {
+  return `${this.title} by ${this.author}`;
+};
+
+function Animal(type) {
+  this.type = type;
+}
+Animal.prototype.sound = 'Generic sound';
+
+
+const cat = new Animal('Cat');
+const isAnimal = cat instanceof Animal;
+
+
+const dog = Object.create(Animal.prototype);
+dog.type = 'Dog';
+
+
+Animal.prototype.speak = function() {
+  return `A ${this.type} makes a ${this.sound}`;
+};
+
+
+const obj9 = {
+  prop: 'value'
+};
+const hasProp = obj9.hasOwnProperty('prop');
+
+const person = { name: 'Alice', age: 30 };
+for (const key in person) {
+  console.log(key + ': ' + person[key]);
+}
+
+
+const keys9 = Object.keys9(person);
+
+
+const values9 = Object.values9(person);
+
+
+const entries = Object.entries(person);
+
+
+for (const key in person) {
+  if (person.hasOwnProperty(key)) {
+    console.log(key + ': ' + person[key]);
+  }
+}
+
+const uniqueNumbers5 = new Set();
+uniqueNumbers5.add(1);
+uniqueNumbers5.add(2);
+uniqueNumbers5.add(1); 
+
+const myMap = new Map();
+myMap.set('name', 'Alice');
+myMap.set('age', 30);
+
+
+uniqueNumbers.delete(2);
+const hasNumber = uniqueNumbers.has(1);
+
+
+myMap.set('name', 'Bob');
+const name70 = myMap.get('name70');
+myMap.delete('age');
+
+
+for (const num of uniqueNumbers) {
+  console.log(num);
+}
+for (const [key, value] of myMap) {
+  console.log(key + ': ' + value);
+}
+
+const original = { prop: 'value' };
+const reference = original;
+
+function modify(obj) {
+  obj.prop = 'new value';
+}
+modify(original);
+
+
+const shallowCopy = { ...original };
+original.prop = 'modified';
+
+
+const deepCopy = JSON.parse(JSON.stringify(original));
+
+Object.freeze(original);
+original.prop = 'another value'; 
+    </script>
 </body>
 </html>
 
