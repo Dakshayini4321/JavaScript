@@ -1473,6 +1473,116 @@ const deepCopy = JSON.parse(JSON.stringify(original));
 Object.freeze(original);
 original.prop = 'another value'; 
     </script>
+    <h1>Function Call and Apply</h1>
+
+    <script>
+      function greet(name) {
+  console.log(`Hello, ${name}! I'm ${this.title}`);
+}
+
+const person = { title: 'Mr.' };
+
+greet.call(person, 'John');
+
+function calculateSum(a, b) {
+  return a + b;
+}
+
+const numbers73 = [5, 7];
+
+const sum = calculateSum.apply(null, numbers73);
+console.log(sum);
+
+const cat2 = {
+  sound: 'Meow',
+  speak: function() {
+    console.log(this.sound);
+  }
+};
+
+const dog = {
+  sound: 'Woof'
+};
+
+cat.speak.call(dog); 
+
+const numbers96 = [1, 2, 3, 4, 5];
+const maxNumber = Math.max.apply(null, numbers96);
+console.log(maxNumber);
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person = {};
+Person.call(person, 'Alice', 30);
+console.log(person);
+
+function findMax() {
+  const numbers = Array.from(arguments);
+  return Math.max.apply(null, numbers);
+}
+
+const max = findMax(10, 25, 8, 17);
+console.log(max);
+
+const car = {
+  speed: 0,
+  accelerate: function(amount) {
+    this.speed += amount;
+  },
+  brake: function(amount) {
+    this.speed -= amount;
+  }
+};
+
+const boat = {
+  speed: 0
+};
+
+car.accelerate.call(boat, 20);
+console.log(boat.speed); 
+
+car.brake.call(boat, 5);
+console.log(boat.speed); 
+
+function memoize(func) {
+  const cache = {};
+
+  return function() {
+    const args = JSON.stringify(arguments);
+    if (cache[args]) {
+      return cache[args];
+    } else {
+      const result = func.apply(this, arguments);
+      cache[args] = result;
+      return result;
+    }
+  };
+}
+
+const expensiveFunction = memoize(function(n) {
+  
+  return n * 2;
+});
+
+console.log(expensiveFunction(5)); 
+console.log(expensiveFunction(5)); 
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function partial(fn, ...args) {
+  return function(...moreArgs) {
+    return fn.call(this, ...args, ...moreArgs);
+  };
+}
+
+const double = partial(multiply, 2);
+console.log(double(5)); 
+    </script>
 </body>
 </html>
 
