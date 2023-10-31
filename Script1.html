@@ -1583,6 +1583,168 @@ function partial(fn, ...args) {
 const double = partial(multiply, 2);
 console.log(double(5)); 
     </script>
+    <h1> Function bind and closures</h1>
+    <script>
+      const person = {
+  name: 'John',
+  sayHello: function() {
+    console.log(`Hello, ${this.name}!`);
+  }
+};
+const greet = person.sayHello.bind(person);
+greet(); 
+
+
+function greet(greeting) {
+  console.log(`${greeting}, ${this.name}!`);
+}
+const person = { name: 'Alice' };
+const greetAlice = greet.bind(person, 'Hi');
+greetAlice(); 
+
+
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  console.log(this); 
+}.bind(this));
+
+
+function multiply(x, y) {
+  return x * y;
+}
+const double = multiply.bind(null, 2);
+console.log(double(5)); 
+
+
+function greet() {
+  console.log(`Hello, ${this.name}!`);
+}
+const person = { name: 'Bob' };
+setTimeout(greet.bind(person), 1000);
+
+
+function greet() {
+  console.log(`Hello, ${this.name}!`);
+}
+const person1 = { name: 'Alice' };
+const person2 = { name: 'Bob' };
+const greetAlice = greet.bind(person1);
+const greetBob = greet.bind(person2);
+greetAlice(); 
+greetBob();   
+
+
+const person = {
+  name: 'Charlie',
+  sayHello: () => {
+    console.log(`Hello, ${this.name}!`);
+  }
+};
+const greet = person.sayHello.bind(person);
+greet(); 
+
+
+function add(a, b) {
+  return a + b;
+}
+const add5 = add.bind(null, 5);
+console.log(add5(3)); 
+
+
+function outer() {
+  const message = 'Hello';
+  function inner() {
+    console.log(message);
+  }
+  return inner;
+}
+const closureFunc = outer();
+closureFunc(); 
+
+
+function greet(greeting) {
+  return function(name) {
+    console.log(`${greeting}, ${name}!`);
+  };
+}
+const sayHi = greet('Hi');
+sayHi('Alice'); 
+
+
+function counter() {
+  let count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+const increment = counter();
+increment(); 
+increment(); 
+
+
+function createPerson(name) {
+  const age = 30;
+  return {
+    getName: function() {
+      return name;
+    },
+    getAge: function() {
+      return age;
+    }
+  };
+}
+const person = createPerson('David');
+console.log(person.getName()); 
+console.log(person.getAge());  
+
+
+function delayedGreeting(name) {
+  setTimeout(function() {
+    console.log(`Hello, ${name}!`);
+  }, 1000);
+}
+delayedGreeting('Eve'); 
+
+
+function createCounter() {
+  let count = 0;
+  return {
+    increment: function() {
+      count++;
+    },
+    getCount: function() {
+      return count;
+    }
+  };
+}
+const counter = createCounter();
+counter.increment();
+console.log(counter.getCount()); 
+
+
+function countdown(n) {
+  if (n > 0) {
+    console.log(n);
+    return countdown.bind(null, n - 1);
+  }
+}
+let countdownFunc = countdown(5);
+while (countdownFunc) {
+  countdownFunc = countdownFunc();
+}
+
+
+function attachEvent(element, eventType, handler) {
+  element.addEventListener(eventType, function(event) {
+    handler(event);
+  });
+}
+const button2 = document.getElementById('myButton');
+attachEvent(button2, 'click', function(event) {
+  console.log('Button clicked!');
+});
+    </script>
 </body>
 </html>
 
