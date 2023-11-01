@@ -1745,6 +1745,89 @@ attachEvent(button2, 'click', function(event) {
   console.log('Button clicked!');
 });
     </script>
+    <h1>Js Clsses</h1>
+    <script>
+      class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+const person51 = new Person('Alice', 30);
+person51.sayHello();
+
+class Car {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+}
+
+const car1 = new Car('Toyota', 'Camry', 2022);
+console.log(`I drive a ${car1.year} ${car1.make} ${car1.model}.`);
+
+
+class Student extends Person {
+  constructor(name, age, studentId) {
+    super(name, age);
+    this.studentId = studentId;
+  }
+
+  study() {
+    console.log(`${this.name} with student ID ${this.studentId} is studying.`);
+  }
+}
+
+const student1 = new Student('Bob', 20, 'S12345');
+student1.sayHello();
+student1.study();
+
+class Teacher extends Person {
+  constructor(name, age, subject) {
+    super(name, age);
+    this.subject = subject;
+  }
+
+  teach() {
+    console.log(`${this.name} teaches ${this.subject}.`);
+  }
+}
+
+const teacher1 = new Teacher('Mr. Smith', 35, 'Math');
+teacher1.sayHello();
+teacher1.teach();
+
+
+class MathUtil {
+  static add(a, b) {
+    return a + b;
+  }
+
+  static multiply(a, b) {
+    return a * b;
+  }
+}
+
+const sum = MathUtil.add(5, 3);
+const product = MathUtil.multiply(4, 6);
+console.log(`Sum: ${sum}, Product: ${product}`);
+
+class StringUtils {
+  static reverseString(input) {
+    return input.split('').reverse().join('');
+  }
+}
+
+const reversed = StringUtils.reverseString('Hello, world!');
+console.log(`Reversed: ${reversed}`);
+
+    </script>
 </body>
 </html>
 
