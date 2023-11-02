@@ -1828,6 +1828,200 @@ const reversed = StringUtils.reverseString('Hello, world!');
 console.log(`Reversed: ${reversed}`);
 
     </script>
+    <h1>Js Asynch</h1>
+    <script>
+      function fetchDataWithCallback(callback) {
+  setTimeout(() => {
+    callback("Data from Callback");
+  }, 1000);
+}
+
+fetchDataWithCallback((data) => {
+  console.log(data);
+});
+
+
+function doAsyncOperation(callback) {
+  setTimeout(() => {
+    callback("Async Operation Complete");
+  }, 1500);
+}
+
+doAsyncOperation((result) => {
+  console.log(result);
+});
+
+
+function fetchDataWithPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data from Promise");
+    }, 1000);
+  });
+}
+
+fetchDataWithPromise()
+  .then((data) => {
+    console.log(data);
+  });
+
+
+function performAsyncTask() {
+  return fetchDataWithPromise()
+    .then((data) => {
+      return data.toUpperCase();
+    })
+    .then((modifiedData) => {
+      console.log(modifiedData);
+    });
+}
+
+performAsyncTask();
+
+
+async function fetchDataWithAsyncAwait() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data with Async/Await");
+    }, 1000);
+  });
+}
+
+async function fetchAndDisplayData() {
+  const data = await fetchDataWithAsyncAwait();
+  console.log(data);
+}
+
+fetchAndDisplayData();
+
+function simulateError() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error("Simulated Error"));
+    }, 1000);
+  });
+}
+
+simulateError()
+  .catch((error) => {
+    console.error(error.message);
+  });
+
+
+function complexPromiseChain() {
+  return fetchDataWithPromise()
+    .then((data) => {
+      return data + " - Processed";
+    })
+    .then((processedData) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(processedData + " - Additional Processing");
+        }, 1000);
+      });
+    })
+    .then((finalData) => {
+      console.log(finalData);
+    });
+}
+
+complexPromiseChain();
+
+
+async function fetchDataWithAsyncAwaitAndError() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error("Async/Await Error"));
+    }, 1000);
+  });
+}
+
+async function handleAsyncError() {
+  try {
+    const data = await fetchDataWithAsyncAwaitAndError();
+    console.log(data);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+handleAsyncError();
+
+
+const promise1 = fetchDataWithPromise();
+const promise2 = fetchDataWithAsyncAwait();
+
+Promise.all([promise1, promise2])
+  .then((results) => {
+    console.log("Promise.all Result:", results);
+  });
+
+function throttleAPIRequest() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("API Data");
+    }, 2000);
+  });
+}
+
+async function makeMultipleRequests() {
+  const results = await Promise.all([
+    throttleAPIRequest(),
+    throttleAPIRequest(),
+    throttleAPIRequest(),
+  ]);
+  console.log("Throttled API Results:", results);
+}
+
+makeMultipleRequests();
+
+
+const fs = require("fs");
+const util = require("util");
+const readFile = util.promisify(fs.readFile);
+
+readFile("C:\Users\user\Desktop\Web\html\as3\angular\sample.txt", "utf8")
+  .then((data) => {
+    console.log("File Content:", data);
+  })
+  .catch((error) => {
+    console.error("File Read Error:", error);
+  });
+
+
+function customPromiseWithTimeout(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Custom Promise Resolved");
+    }, ms);
+  });
+}
+
+const timeoutPromise = customPromiseWithTimeout(3000);
+
+Promise.race([timeoutPromise, fetchDataWithPromise()])
+  .then((result) => {
+    console.log("Promise with Timeout:", result);
+  })
+  .catch((error) => {
+    console.error("Promise with Timeout Error:", error);
+  });
+
+
+const fsPromises = require("fs").promises;
+
+async function readAndWriteFile() {
+  try {
+    const data = await fsPromises.readFile("input.txt", "utf8");
+    await fsPromises.writeFile("output.txt", data.toUpperCase());
+    console.log("File Operations Complete");
+  } catch (error) {
+    console.error("File Operation Error:", error);
+  }
+}
+
+readAndWriteFile();
+    </script>
 </body>
 </html>
 
