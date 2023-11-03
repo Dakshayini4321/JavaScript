@@ -2022,6 +2022,84 @@ async function readAndWriteFile() {
 
 readAndWriteFile();
     </script>
+    <h1>DOM Methods and Document</h1>
+    <div id="myElementId">Element with ID</div>
+    <div class="myClass">Element with Class</div>
+    <div>Another Div Element</div>
+    <input type="text" id="myInput" value="Initial Value">
+    
+    <script>
+       
+        console.log(document);
+
+        
+        const elementById = document.getElementById('myElementId');
+        console.log(elementById);
+
+        
+        const elementsByClassName = document.getElementsByClassName('myClass');
+        console.log(elementsByClassName);
+
+        
+        const elementsByTagName = document.getElementsByTagName('div');
+        console.log(elementsByTagName);
+
+        
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'This is a new div element';
+        console.log(newDiv);
+
+       
+        document.body.appendChild(newDiv);
+        console.log('New div added to the document body');
+
+        
+        const listContainer = document.createElement('ul');
+        const items = ['Item 1', 'Item 2', 'Item 3'];
+
+        items.forEach((itemText) => {
+          const listItem = document.createElement('li');
+          listItem.textContent = itemText;
+          listContainer.appendChild(listItem);
+        });
+
+        document.body.appendChild(listContainer);
+        console.log('List of items added to the document body');
+
+        
+        newDiv.addEventListener('click', function() {
+            alert('Div element clicked!');
+        });
+        console.log('Click event listener added to the new div element');
+
+        
+        document.body.style.backgroundColor = 'lightblue';
+        console.log('Document body background color changed');
+
+        
+        const firstClassElement = elementsByClassName[0];
+        firstClassElement.style.fontSize = '20px';
+        console.log('Style modified for the first element with a specific class');
+
+        
+        elementById.setAttribute('data-custom', 'example');
+        console.log('Attribute "data-custom" set for the element with the specified ID');
+
+       
+        const parentElement = newDiv.parentElement;
+        console.log('Parent element of the new div:', parentElement);
+
+        
+        const firstChild = document.body.firstElementChild;
+        console.log('First child element of the document body:', firstChild);
+
+        
+        const inputField = document.getElementById('myInput');
+        const inputValue = inputField.value;
+        console.log('Current value of the input field:', inputValue);
+        inputField.value = 'New input value';
+        console.log('Input field value updated to "New input value"');
+    </script>
 </body>
 </html>
 
