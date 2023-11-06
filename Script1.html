@@ -2100,6 +2100,164 @@ readAndWriteFile();
         inputField.value = 'New input value';
         console.log('Input field value updated to "New input value"');
     </script>
+    <h1>JS JSON, Data types, Parse, Stringify</h1>
+    <script>
+      const person = {
+  name: "John Doe",
+  age: 30,
+  isStudent: false,
+  hobbies: ["reading", "coding"],
+};
+
+
+const jsonString = JSON.stringify(person);
+console.log("JSON String:", jsonString);
+
+
+const parsedPerson = JSON.parse(jsonString);
+console.log("Parsed Object:", parsedPerson);
+
+
+const employee = {
+  name: "Alice",
+  job: {
+    title: "Software Engineer",
+    yearsOfExperience: 5,
+  },
+};
+
+
+const employees = [
+  { name: "Bob", department: "HR" },
+  { name: "Charlie", department: "Marketing" },
+];
+
+
+const complexData = {
+  user: {
+    username: "jsmith",
+    email: "jsmith@example.com",
+  },
+  orders: [
+    { id: 1, total: 50.0 },
+    { id: 2, total: 75.0 },
+  ],
+};
+
+
+const jsonArrayOfEmployees = JSON.stringify(employees);
+const parsedEmployees = JSON.parse(jsonArrayOfEmployees);
+console.log("Parsed Employees:", parsedEmployees);
+
+
+try {
+  JSON.parse("invalid JSON");
+} catch (error) {
+  console.error("Error parsing JSON:", error);
+}
+
+
+const customer = {
+  name: "Eve",
+  age: 25,
+  hasAccount: true,
+};
+
+const jsonStringWithReplacer = JSON.stringify(customer, (key, value) => {
+  if (key === "hasAccount" && value === true) {
+    return undefined; 
+  }
+  return value;
+});
+
+console.log("JSON String with Replacer:", jsonStringWithReplacer);
+
+
+const isActive = true;
+
+
+const productPrice = 19.99;
+
+
+const emptyValue = null;
+
+
+const colors = ["red", "green", "blue"];
+
+
+const event = {
+  name: "Conference",
+  date: new Date("2023-11-15T10:00:00Z"),
+};
+
+
+const jsonWithDate = '{"date": "2023-11-20T15:30:00Z"}';
+const parsedDate = JSON.parse(jsonWithDate);
+console.log("Parsed Date:", parsedDate);
+
+
+const personToPrint = {
+  firstName: "Mary",
+  lastName: "Smith",
+  age: 28,
+};
+
+const prettyPrinted = JSON.stringify(personToPrint, null, 2);
+console.log("Pretty Printed JSON:\n", prettyPrinted);
+
+
+const dataWithUndefined = {
+  name: "John",
+  city: undefined,
+};
+
+
+const circularObj = {};
+circularObj.circularReference = circularObj;
+
+const customerData = {
+  firstName: "David",
+  lastName: "Johnson",
+  balance: 100.50,
+};
+
+const formattedJSON = JSON.stringify(customerData, null, "  ");
+console.log("Formatted JSON:\n", formattedJSON);
+
+
+const jsonStringWithReviver = '{"date": "2023-11-10T08:45:00Z"}';
+const parsedWithReviver = JSON.parse(jsonStringWithReviver, (key, value) => {
+  if (key === "date") {
+    return new Date(value);
+  }
+  return value;
+});
+console.log("Parsed with Reviver:", parsedWithReviver);
+
+const textWithSpecialChars = 'This is a "quoted" text.';
+
+
+const jsonArray = '["apple", "banana", "cherry"]';
+const parsedArray = JSON.parse(jsonArray);
+
+
+const productsToSort = [
+  { name: "Banana", price: 1.25 },
+  { name: "Apple", price: 1.00 },
+  { name: "Cherry", price: 2.00 },
+];
+const sortedProducts = productsToSort.sort((a, b) => a.price - b.price);
+
+
+const userSettings = {
+  username: "jsmith",
+  password: "secretpassword",
+  email: "jsmith@example.com",
+};
+const filteredSettings = JSON.stringify(userSettings, ["username", "email"]);
+
+console.log("Filtered User Settings:", filteredSettings);
+    </script>
 </body>
 </html>
 
