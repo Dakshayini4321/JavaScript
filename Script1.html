@@ -2110,12 +2110,12 @@ readAndWriteFile();
 };
 
 
-const jsonString = JSON.stringify(person);
-console.log("JSON String:", jsonString);
+const jsonString3 = JSON.stringify(person);
+console.log("JSON String:", jsonString3);
 
 
-const parsedPerson = JSON.parse(jsonString);
-console.log("Parsed Object:", parsedPerson);
+const parsedPerson = JSON.parse(jsonString3);
+console.log("Parsed Object:", parsedPerson3);
 
 
 const employee = {
@@ -2252,12 +2252,131 @@ const sortedProducts = productsToSort.sort((a, b) => a.price - b.price);
 const userSettings = {
   username: "jsmith",
   password: "secretpassword",
-  email: "jsmith@example.com",
+  email: "jsmith@gmail.com",
 };
 const filteredSettings = JSON.stringify(userSettings, ["username", "email"]);
 
 console.log("Filtered User Settings:", filteredSettings);
     </script>
+    <h1>JSON Arrays and Objects</h1>
+    <script>
+      var person = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+};
+
+var book = {
+  "title": "Harry Potter",
+  "author": "J.K. Rowling",
+  "publishedYear": 1997
+};
+
+var car = {
+  "make": "Toyota",
+  "model": "Camry",
+  "year": 2022
+};
+
+var movie = {
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010
+};
+
+var computer = {
+  "brand": "Apple",
+  "model": "MacBook Pro",
+  "year": 2023
+};
+
+
+var fruits6 = ["apple", "banana", "cherry", "date"];
+
+var colors6 = ["red", "blue", "green", "yellow", "purple"];
+
+var numbers6 = [1, 2, 3, 4, 5];
+
+var countries = ["USA", "Canada", "UK", "Australia"];
+
+var sports = ["soccer", "basketball", "tennis"];
+
+
+console.log(person.name); 
+console.log(book.author); 
+console.log(fruits6[2]); 
+console.log(numbers6.length); 
+console.log(countries[3]); 
+console.log(sports[0]); 
+
+
+var student = {
+  "name": "Alice",
+  "age": 20,
+  "courses": ["Math", "Physics", "Computer Science"],
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "zipcode": "10001"
+  }
+};
+
+var order = {
+  "orderID": "12345",
+  "customer": {
+    "name": "Bob",
+    "email": "bob@gmail.com"
+  },
+  "products": [
+    { "name": "Laptop", "price": 999 },
+    { "name": "Mouse", "price": 20 }
+  ]
+};
+
+
+var employees = [
+  {
+    "name": "John",
+    "department": "HR",
+    "salary": 50000
+  },
+  {
+    "name": "Sarah",
+    "department": "IT",
+    "salary": 60000
+  },
+  {
+    "name": "Michael",
+    "department": "Finance",
+    "salary": 55000
+  }
+];
+
+var books = [
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": ["Fiction", "Classic"]
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": ["Fantasy", "Adventure"]
+  }
+];
+
+
+console.log(student.address.city); 
+console.log(order.products[1].name); 
+
+var totalSalary = employees.reduce((acc, employee) => acc + employee.salary, 0);
+console.log("Total Salary of Employees: $" + totalSalary);
+
+
+var fantasyBooks = books.filter(book => book.genre.includes("Fantasy"));
+console.log(fantasyBooks);
+    </script>
+
 </body>
 </html>
 
