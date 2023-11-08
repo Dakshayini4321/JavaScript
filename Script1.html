@@ -2376,6 +2376,173 @@ console.log("Total Salary of Employees: $" + totalSalary);
 var fantasyBooks = books.filter(book => book.genre.includes("Fantasy"));
 console.log(fantasyBooks);
     </script>
+    <h1>JSON -Completed-</h1>
+    <script>
+      var person = {
+            "name": "ABCD",
+            "age": 33,
+            "city": "New York"
+        };
+        console.log( person);
+
+       
+        var name00 = person.name;
+        var age00 = person.age;
+        var city = person.city;
+        console.log("Name:", name00, "Age:", age00, "City:", city);
+
+       
+        person.age = 31;
+        console.log( person.age);
+
+        
+        var jsonStr = JSON.stringify(person);
+        console.log( jsonStr);
+
+        var objFromStr = JSON.parse('{"name":"Alice","age":25,"city":"Los Angeles"}');
+        console.log( objFromStr);
+
+        
+        for (var key in person) {
+            console.log( key,  person[key]);
+        }
+
+        
+        var hasProperty = "name" in person;
+        console.log( hasProperty);
+
+       
+        var employee00 = {
+            "firstName": "Alice",
+            "lastName": "Johnson",
+            "address": {
+                "street": "123 Main ",
+                "city": "Tamil Nadu"
+            }
+          };
+        console.log( employee00);
+
+      
+        var street = employee.address.street;
+        console.log( street);
+
+        
+        var fruits00 = ["apple", "banana", "cherry"];
+        console.log( fruits00);
+
+       
+        var firstFruit = fruits[0];
+        console.log( firstFruit);
+
+        
+        fruits.push("orange");
+        console.log( fruits);
+
+        
+        fruits.pop();
+        console.log( fruits);
+
+        
+        var students = [
+            { "name": "Bob", "age": 22 },
+            { "name": "Cathy", "age": 20 }
+        ];
+        console.log( students);
+
+        
+        var studentName = students[0].name;
+        console.log( studentName);
+
+        
+        for (var v = 0; v < students.length; v++) {
+            console.log( students[v].name, "Age:", students[v].age);
+        }
+
+        
+        students.push({ "name": "David", "age": 24 });
+        console.log( students);
+
+       
+        var company00 = {
+            "name": "ABC Inc.",
+            "employees": ["John", "Alice", "Bob"],
+            "departments": ["HR", "IT", "Finance"]
+        };
+        console.log( company00);
+
+        
+        var firstEmployee = company.employees[0];
+        var secondDepartment = company.departments[1];
+        console.log( firstEmployee,  secondDepartment);
+
+       
+        company.employees[1] = "Eve";
+        company.departments.push("Sales");
+        console.log( company);
+
+        
+        var product00 = {
+            "name": "Smartphone",
+            "details": {
+                "brand": "Samsung",
+                "price": {
+                    "currency": "USD",
+                    "amount": 499.99
+                }
+            }
+        };
+        console.log( product00);
+
+       
+        var brand = product.details.brand;
+        var priceAmount = product.details.price.amount;
+        console.log( brand,  priceAmount);
+
+        var mixedArray = [1, "apple", true, {"name": "Alice"}];
+        console.log( mixedArray);
+
+        var stringValue = mixedArray[1];
+        var objValue = mixedArray[3].name;
+        console.log( stringValue,  objValue);
+
+       
+        var data = {
+            "name": "Null Example",
+            "value": null
+        };
+        console.log( data);
+
+        
+        var isValueNull = data.value === null;
+        console.log( isValueNull);
+
+        
+        try {
+            var invalidJson = JSON.parse("{ invalid: JSON }");
+            console.log( invalidJson);
+        } catch (error) {
+            console.error( error.message);
+        }
+
+       
+        var mathFunctions = {
+            "add": function (a, b) { return a + b; },
+            "subtract": function (a, b) { return a - b; }
+        };
+        console.log( mathFunctions);
+
+        
+        var result00 = mathFunctions.add(5, 3);
+        console.log( result00);
+
+    
+        var dateData = {
+            "eventDate": new Date("2023-11-08")
+        };
+        console.log( dateData);
+
+        
+    </script>
 
 </body>
 </html>
