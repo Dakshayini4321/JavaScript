@@ -2543,6 +2543,96 @@ console.log(fantasyBooks);
 
         
     </script>
+    <h1>JS Window BOM</h1>
+    <script>
+      console.log("Browser Name: " + navigator.appName);
+console.log("Browser Version: " + navigator.appVersion);
+console.log("User Agent: " + navigator.userAgent);
+
+
+alert("Welcome");
+
+
+setTimeout(() => {
+  console.log("Delayed log after 2 seconds");
+}, 2000);
+
+
+let counter = 1;
+const intervalId = setInterval(() => {
+  console.log("Interval Log #" + counter);
+  counter++;
+  if (counter > 5) {
+    clearInterval(intervalId);
+  }
+}, 1000);
+
+
+function customPopup(message) {
+  const popup = window.open("", "CustomPopup", "width=300,height=200");
+  popup.document.write("<p>" + message + "</p>");
+}
+
+customPopup("This is a custom pop-up!");
+
+
+const userConfirmed = confirm("Do you want to proceed?");
+console.log("User Confirmed: " + userConfirmed);
+
+const userInput = prompt("Enter your name:", "John Doe");
+console.log("User Input: " + userInput);
+
+
+setTimeout(() => {
+  window.location.href = "https://www.adidas.com";
+}, 3000);
+
+
+window.addEventListener("online", () => {
+  console.log("Online now!");
+});
+
+window.addEventListener("offline", () => {
+  console.log("Offline now!");
+});
+
+
+const newTab = window.open("https://www.adidas.com", "_blank");
+
+
+
+
+console.log("Languages: " + navigator.languages);
+
+
+setTimeout(() => {
+  alert("This after a delay!");
+}, 5000);
+
+console.log("Current URL: " + window.location.href);
+
+
+setTimeout(() => {
+  window.location.reload();
+}, 4000);
+
+
+console.log("Screen Width: " + window.screen.width);
+console.log("Screen Height: " + window.screen.height);
+
+window.moveTo(0, 0);
+window.resizeTo(screen.width, screen.height);
+
+
+setTimeout(() => {
+  window.history.back();
+}, 6000);
+
+
+setTimeout(() => {
+  window.history.forward();
+}, 8000)
+    </script>
 
 </body>
 </html>
