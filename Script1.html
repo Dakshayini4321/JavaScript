@@ -2633,6 +2633,87 @@ setTimeout(() => {
   window.history.forward();
 }, 8000)
     </script>
+    <h1>JS DOM form, event, EventListner</h1>
+    <form id="msForm">
+      <label for="inputText">Enter Text:</label>
+      <input type="text" id="inputText">
+      <button type="button" onclick="alert('Form submitted!')">Submit</button>
+    </form>
+  
+   
+    <form id="submitForm">
+      <label for="inputSubmit">Submit Form:</label>
+      <input type="submit" id="inputSubmit">
+    </form>
+  
+    <script>
+     
+      const msForm = document.getElementById('msForm');
+      const inputText = document.getElementById('inputText');
+  
+    
+      simpleForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert(`Form submitted with text: ${inputText.value}`);
+      });
+  
+    
+      const submitButton = document.getElementById('inputSubmit');
+      submitButton.addEventListener('click', function() {
+        alert('Submit button clicked!');
+      });
+  
+    
+      inputText.addEventListener('focus', function() {
+        console.log('Input focused!');
+      });
+  
+    
+      inputText.addEventListener('blur', function() {
+        console.log('Input blurred!');
+      });
+  
+      
+      inputText.addEventListener('keydown', function(event) {
+        console.log(`Key pressed: ${event.key}`);
+      });
+  
+    
+      inputText.addEventListener('keyup', function(event) {
+        console.log(`Key released as: ${event.key}`);
+      });
+  
+     
+      submitButton.addEventListener('mouseover', function() {
+        console.log('Mouse over the submit button');
+      });
+  
+      
+      submitButton.addEventListener('mouseout', function() {
+        console.log('Mouse out of the submit button');
+      });
+      
+      inputText.addEventListener('change', function() {
+        console.log('Input value changed');
+      });
+  
+      
+      const resetButton = document.createElement('button');
+      resetButton.textContent = 'Reset Form';
+      document.body.appendChild(resetButton);
+  
+      resetButton.addEventListener('click', function() {
+        simpleForm.reset();
+      });
+  
+      
+      resetButton.addEventListener('dblclick', function() {
+        console.log('Reset button double-clicked');
+      });
+    </script>
+  
+  </body>
+  </html>
 
 </body>
 </html>
