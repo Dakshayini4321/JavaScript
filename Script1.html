@@ -2713,7 +2713,90 @@ setTimeout(() => {
     </script>
   
   </body>
-  </html>
+  <h1>DOM Nodes and Collections</h1>
+  <p id="paragraph1">paragraph.</p>
+
+  
+  <script>
+    let paragraphNode = document.getElementById('paragraph1');
+    paragraphNode.textContent = 'Updated paragraph content.';
+    console.log(paragraphNode.textContent);
+  </script>
+
+  
+  <div id="exampleDiv"></div>
+
+  
+  <script>
+    let divNode = document.getElementById('exampleDiv');
+    let spanNode = document.createElement('span');
+    spanNode.textContent = 'New span element';
+    divNode.appendChild(spanNode);
+    console.log(divNode.innerHTML);
+ 
+
+    let titleNode = document.getElementById('mainTitle');
+    titleNode.setAttribute('class', 'header');
+    console.log(titleNode.getAttribute('class'));
+ 
+
+    let spanToRemove = document.querySelector('span');
+    spanToRemove.parentNode.removeChild(spanToRemove);
+    console.log(divNode.innerHTML);
+  </script>
+
+  
+  <ul id="listContainer">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    let listItems = document.querySelectorAll('#listContainer li');
+    listItems.forEach(item => console.log(item.textContent));
+  </script>
+
+  
+  <button id="clickMeBtn">Click me!</button>
+
+  <script>
+    let clickMeBtn = document.getElementById('clickMeBtn');
+    clickMeBtn.addEventListener('click', () => console.log('Button clicked!'));
+  </script>
+
+  
+  <ul id="nestedList">
+    <li>Parent
+      <ul>
+        <li>Child 1</li>
+        <li>Child 2</li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    let parentItem = document.querySelector('#nestedList li');
+    let childItems = parentItem.querySelectorAll('ul li');
+    childItems.forEach(item => console.log(item.textContent));
+  </script>
+
+  
+  <table id="dynamicTable"></table>
+
+  <script>
+    let tableNode = document.getElementById('dynamicTable');
+
+    for (let i = 0; i < 3; i++) {
+      let row = tableNode.insertRow();
+      for (let j = 0; j < 2; j++) {
+        let cell = row.insertCell();
+        cell.textContent = `Row ${i + 1}, Cell ${j + 1}`;
+      }
+    }
+
+    console.log(tableNode.outerHTML);
+  </script>
 
 </body>
 </html>
