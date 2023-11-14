@@ -2797,6 +2797,146 @@ setTimeout(() => {
 
     console.log(tableNode.outerHTML);
   </script>
+  <h1>JS DOM NOde Lists</h1>
+  
+
+  
+  <div class="example" id="example1">Example 1</div>
+  <div class="example" id="example2">Example 2</div>
+  <script>
+    const divElements = document.getElementsByTagName('div');
+    console.log(divElements);
+  </script>
+
+  
+  <p class="example">Example 3</p>
+  <p class="example">Example 4</p>
+  <script>
+    const pElements = document.getElementsByClassName('example');
+    console.log(pElements);
+  </script>
+
+  
+  <span id="exa5">Example 5</span>
+  <script>
+    const elementById1 = document.getElementById('exa5');
+    console.log(elementById1);
+ 
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'New Example';
+    document.body.appendChild(newDiv);
+    console.log(newDiv);
+  
+    const parentElement1 = document.body;
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'Appended Example';
+    const newSpan = document.createElement('span');
+    newSpan.textContent = 'Another Appended Example';
+    parentElement.append(newParagraph, newSpan);
+    console.log(parentElement1.children);
+  </script>
+
+ 
+  <button onclick="removeElement()">Remove Example</button>
+  <script>
+    function removeElement() {
+      const button = document.querySelector('button');
+      button.parentElement.removeChild(button);
+    }
+  </script>
+
+  
+  <button onclick="showAlert()">Click me</button>
+  <script>
+    function showAlert() {
+      alert('Button Clicked!');
+    }
+  </script>
+
+  
+  <p id="changeContent">Original Content</p>
+  <button onclick="changeText()">Change Text</button>
+  <script>
+    function changeText() {
+      const paragraph = document.getElementById('changeContent');
+      paragraph.textContent = 'New Content';
+    }
+  </script>
+
+ 
+
+ 
+  <span id="ex">App</span>
+  <script>
+    const elementById9 = document.getElementById('example5');
+    console.log(elementById9);
+  
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'New Example';
+    document.body.appendChild(newDiv);
+    console.log(newDiv);
+ 
+    const parentElement9 = document.body;
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'Appended Example';
+    const newSpan = document.createElement('span');
+    newSpan.textContent = 'Another Appended Example';
+    parentElement.append(newParagraph, newSpan);
+    console.log(parentElement9.children);
+  </script>
+
+  
+  <button onclick="removeElement()">Remove Example</button>
+  <script>
+    function removeElement() {
+      const button = document.querySelector('button');
+      button.parentElement.removeChild(button);
+    }
+  </script>
+
+  
+  <button onclick="showAlert()">Click me</button>
+  <script>
+    function showAlert() {
+      alert('Button Clicked!');
+    }
+  </script>
+
+  
+  <p id="changeContent">Original Content</p>
+  <button onclick="changeText()">Change Text</button>
+  <script>
+    function changeText() {
+      const paragraph = document.getElementById('changeContent');
+      paragraph.textContent = 'New Content';
+    }
+  </script>
+
+  
+  <img id="changeImage" src="C:\Users\user\Desktop\Web\html\as3\angular\app.jpeg" alt="Original Image">
+  <button onclick="changeImageSource()">Change Image</button>
+  <script>
+    function changeImageSource() {
+      const image = document.getElementById('changeImage');
+      image.src = 'C:\Users\user\Desktop\Web\html\as3\angular\images\ach.jpeg';
+      image.alt = 'C:\Users\user\Desktop\Web\html\as3\angular\images\fb.jpeg';
+    }
+  </script>
+
+ 
+  <button onclick="highlightElements()">Highlight Examples</button>
+  <script>
+    function highlightElements() {
+      const elementsToHighlight = document.querySelectorAll('.example');
+      elementsToHighlight.forEach(element => {
+        element.classList.add('highlight');
+      });
+    }
+  </script>';
+     
+
+ 
+  </script>
 
 </body>
 </html>
