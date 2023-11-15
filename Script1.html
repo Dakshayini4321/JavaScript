@@ -2932,11 +2932,73 @@ setTimeout(() => {
         element.classList.add('highlight');
       });
     }
-  </script>';
-     
-
- 
   </script>
+     
+<h1>JS AJAX</h1>
+<script>
+  function ks_ajax_request(url, data, successCallback, errorCallback) {
+    
+    console.log(`Sending AJAX request to ${url} with data: ${JSON.stringify(data)}`);
+    
+    setTimeout(() => {
+        const response = { status: 'success', data: `Response from ${url}` };
+        successCallback(response);
+    }, 1000);
+}
+
+function ks_ajax_response(response) {
+  
+    console.log(`Received AJAX response: ${response.data}`);
+}
+
+/
+for (let i = 1; i <= 13; i++) {
+    const url = `https://windows.com/api/${i}`;
+    const data = { param: `value${i}` };
+
+    ks_ajax_request(url, data, 
+        (response) => ks_ajax_response(response),
+        (error) => console.error(`Error in AJAX request ${i}: ${error}`)
+    );
+}
+
+
+
+function ajaxRequest(method, url, data, successCallback, errorCallback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                successCallback(response);
+            } else {
+                errorCallback(xhr.statusText);
+            }
+        }
+    };
+
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(data));
+}
+
+
+function handleAjaxResponse(response) {
+    console.log(`Received AJAX response: ${JSON.stringify(response)}`);
+}
+
+
+for (let i = 1; i <= 14; i++) {
+    const url = `https://jsonplaceholder.typicode.com/posts/${i}`;
+    const data = { userId: 1, title: `Title ${i}`, body: `Body ${i}` };
+
+    ajaxRequest('POST', url, data,
+        (response) => handleAjaxResponse(response),
+        (error) => console.error(`Error in AJAX request ${i}: ${error}`)
+    );
+}
+</script>
 
 </body>
 </html>
