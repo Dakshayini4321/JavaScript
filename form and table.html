@@ -1,0 +1,168 @@
+<html >
+<head>
+  
+  <meta name="viewport" content="width=device-width ">
+  <title>Form</title>
+ 
+</head>
+<body>
+
+ 
+  <form id="registrationForm">
+    <br>
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company">
+    <br>
+
+    <label for="firstName">* First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName">
+    <br>
+
+    <label for="email">* Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+
+    <label for="phone"> Phone:</label>
+    <input type="tel" id="phone" name="phone">
+    <br>
+
+    <label for="cancelRegistration">Cancel Registration:</label>
+    <input type="checkbox" id="cancelRegistration" name="cancelRegistration">
+    <br>
+
+    <label for="trainingSession">Training Session 2010:</label>
+    <select id="trainingSession" name="trainingSession">
+      <option value="" disabled selected>Select a date</option>
+      <br>
+      
+    </select>
+<br>
+    <label for="sessionType">Training Type:</label>
+    <br>
+    <input type="radio" id="campaignManagement" name="sessionType" value="Campaign Management">
+    <label for="campaignManagement">Campaign Management</label>
+<br>
+    <input type="radio" id="crmAdministration" name="sessionType" value="CRM Administration">
+    <label for="crmAdministration">CRM Administration</label>
+    <br>
+
+    <input type="radio" id="emailDeployment" name="sessionType" value="Email Deployment">
+    <label for="emailDeployment">Email Deployment</label>
+    <br>
+
+    <input type="radio" id="partner" name="sessionType" value="Partner">
+    <label for="partner">Partner</label>
+<br>
+    <input type="radio" id="employee" name="sessionType" value="Employee">
+    <label for="employee">Employee</label>
+
+    <br>
+
+    <label for="dietaryRequirements">Dietary Requirements:</label>
+    <input type="text" id="dietaryRequirements" name="dietaryRequirements">
+<br>
+    <label for="expectations">Expectations?</label>
+    <textarea id="expectations" name="expectations"></textarea>
+<br>
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    
+    function submitForm() {
+     
+      alert("Form submitted!");
+    }
+  </script>
+
+</body>
+
+  <style>
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <form id="registrationForm">
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company">
+
+  
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+ 
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Cancel Registration</th>
+        <th>Training Session</th>
+        <th>Training Type</th>
+        <th>Dietary Requirements</th>
+        <th>Expectations</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody">
+      
+    </tbody>
+  </table>
+
+  <script>
+    
+    function submitForm() {
+      
+      var company = document.getElementById("company").value;
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var cancelRegistration = document.getElementById("cancelRegistration").checked;
+      var trainingSession = document.getElementById("trainingSession").value;
+      var sessionType = document.querySelector('input[name="sessionType"]:checked');
+      var dietaryRequirements = document.getElementById("dietaryRequirements").value;
+      var expectations = document.getElementById("expectations").value;
+
+
+      var table = document.getElementById("dataTable");
+      var newRow = table.insertRow(table.rows.length);
+      newRow.insertCell(0).innerHTML = company;
+      newRow.insertCell(1).innerHTML = firstName;
+      newRow.insertCell(2).innerHTML = lastName;
+      newRow.insertCell(3).innerHTML = email;
+      newRow.insertCell(4).innerHTML = phone;
+      newRow.insertCell(5).innerHTML = cancelRegistration ? 'Yes' : 'No';
+      newRow.insertCell(6).innerHTML = trainingSession;
+      newRow.insertCell(7).innerHTML = sessionType ? sessionType.value : '';
+      newRow.insertCell(8).innerHTML = dietaryRequirements;
+      newRow.insertCell(9).innerHTML = expectations;
+
+     
+      document.getElementById("registrationForm").reset();
+    }
+  </script>
+
+</body>
+</html>
