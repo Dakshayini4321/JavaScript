@@ -1,0 +1,91 @@
+<html>
+<head>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</head>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000;"></canvas>
+<div id="plotlyDiv"></div>
+<canvas id="lineChart" width="400" height="300" style="border:1px solid #000;"></canvas>
+<canvas id="barChart" width="400" height="300" style="border:1px solid #000;"></canvas>
+<canvas id="doughnutChart" width="400" height="300" style="border:1px solid #000;"></canvas>
+
+<script>
+ 
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  
+  ctx.fillRect(50, 50, 100, 100);
+  
+ 
+  ctx.beginPath();
+  ctx.arc(20, 20, 5, 0, 2 * Math.PI);
+  ctx.fill();
+  
+  
+  ctx.moveTo(30, 30);
+  ctx.lineTo(40, 30);
+  ctx.stroke();
+  
+  
+  ctx.font = '30px Arial';
+  ctx.fillText('Hello, Canvas!', 5, 40);
+
+  
+  const trace = {
+    x: [1, 2, 3, 4],
+    y: [10, 11, 12, 13],
+    type: 'scatter'
+  };
+  Plotly.newPlot('plotlyDiv', [trace]);
+
+ 
+  const data = [{x: ['A', 'B', 'C'], y: [3, 5, 2], type: 'bar'}];
+  Plotly.newPlot('plotlyDiv', data);
+
+  
+  const dataPie = [{
+    values: [19, 26, 55],
+    labels: ['Residential', 'Non-Residential', 'Utility'],
+    type: 'pie'
+  }];
+  Plotly.newPlot('plotlyDiv', dataPie);
+
+  
+  const ctxLine = document.getElementById('lineChart').getContext('2d');
+  new Chart(ctxLine, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April'],
+      datasets: [{label: 'Sales', data: [10, 20, 15, 25]}]
+    }
+  });
+
+  
+  const ctxBar = document.getElementById('barChart').getContext('2d');
+  new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green'],
+      datasets: [{label: 'Colors', data: [5, 7, 3, 9]}]
+    }
+  });
+
+ 
+  const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+  new Chart(ctxDoughnut, {
+    type: 'doughnut',
+    data: {
+      labels: ['Cat', 'Dog', 'Fish'],
+      datasets: [{data: [20, 30, 50]}]
+    }
+  });
+</script>
+
+</body>
+</html>
