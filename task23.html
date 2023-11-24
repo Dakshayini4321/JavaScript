@@ -1,0 +1,95 @@
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+
+<button onclick="generateAndSortTable()">Generate and Sort Table</button>
+
+
+<table id="originalTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Occupation</th>
+            <th>Email</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody id="originalBody">
+       
+    </tbody>
+</table>
+
+
+<button onclick="sortTable()">Sort Table</button>
+
+
+<table id="sortedTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Occupation</th>
+            <th>Email</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody id="sortedBody">
+        <!-- Sorted data will be added here -->
+    </tbody>
+</table>
+
+<script>
+    function generateAndSortTable() {
+       
+        var originalData = [
+            { name: "John", age: 25, city: "New York", occupation: "Engineer", email: "john@email.com", salary: 80000 },
+            { name: "Alice", age: 30, city: "San Francisco", occupation: "Designer", email: "alice@email.com", salary: 90000 },
+           
+        ];
+
+       
+        var originalBody = document.getElementById("originalBody");
+
+       
+        originalBody.innerHTML = "";
+
+       
+        originalData.forEach(function (data) {
+            var row = document.createElement("tr");
+            row.innerHTML = "<td>" + data.name + "</td><td>" + data.age + "</td><td>" + data.city +
+                "</td><td>" + data.occupation + "</td><td>" + data.email + "</td><td>" + data.salary + "</td>";
+            originalBody.appendChild(row);
+        });
+
+        
+        sortTable();
+    }
+
+    function sortTable() {
+       
+    }
+</script>
+
+</body>
+</html>
